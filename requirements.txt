@@ -1,0 +1,8 @@
+# 데이터
+pandas
+numpy
+scikit-learn
+
+# 시각화
+matplotlib
+seaborn
