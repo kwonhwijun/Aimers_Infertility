@@ -1,14 +1,15 @@
 
-from preprocessing import Preprocessor
-from model import Modeler
-from evaluate import Evaluator
-from submit import Submisson
+from source.preprocessing import Preprocessor
+from source.model import Modeler
+from source.evaluate import Evaluator
+from source.submit import Submisson
 from sklearn.model_selection import train_test_split
 import os
 
 # 파일 경로 
-train_path = '/Users/hj/projects/Aimers/data/raw/train.csv'
-test_path = '/Users/hj/projects/Aimers/data/raw/test.csv'
+
+train_path = 'data/raw/train.csv'
+test_path = 'data/raw/test.csv'
 
 def main():
     # 1. 전처리
@@ -40,7 +41,7 @@ def main():
     submission = Submisson(preproc)
     today = datetime.now().strftime('%m%d_%H%M%S')
 
-    submission.gen_submit(model, test_file_path= test_path, output_file= f'submisson/submisson_{today}.csv')
+    submission.gen_submit(model, test_file_path= test_path, output_file= f'submission/submission_{today}.csv')
 
 if __name__ == '__main__':
     main()
